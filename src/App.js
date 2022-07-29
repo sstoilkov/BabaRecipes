@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
@@ -9,6 +9,10 @@ import { Recipe } from "./components/Recipe/Recipe";
 
 
 function App() {
+
+  const [recipes, setRecipes] = useState([]);
+  
+
   return (
     <div className="App">
       <Header />
