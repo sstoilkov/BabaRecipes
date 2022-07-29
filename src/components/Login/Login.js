@@ -1,8 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
 
-import { login } from "../../services/authService";
+import { AuthContext } from "../../contexts/AuthContext";
+import * as AuthService from "../../services/authService";
+
 export const Login = () => {
-
+    const { userLogin } = useContext(AuthContext)
+    const navigate = useNavigate();
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -11,12 +16,15 @@ export const Login = () => {
             password
         } = Object.fromEntries(new FormData(e.target))
 
-        console.log(email, password);
-
-        login(email, password)
+        AuthService.login(email, password)
             .then(authData => {
-                console.log(authData);
+                userLogin(authData);
+                navigate('/')
             })
+            .catch(() => {
+                //add page for failed login
+                navigate('/')
+            });
     }
 
     return (
@@ -33,7 +41,7 @@ export const Login = () => {
                         placeholder="Sokka@gmail.com"
                     />
                     <label htmlFor="login-pass">Password:</label>
-                    <input type="password" id="login-password" name="password" />
+                    <input type="password" id="login-pass" name="password" />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
                         <span>

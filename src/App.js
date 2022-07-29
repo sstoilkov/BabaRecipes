@@ -7,27 +7,37 @@ import { Login } from "./components/Login/Login"
 import { Register } from "./components/Register/Register"
 import { Recipe } from "./components/Recipe/Recipe";
 
+import * as recipeService from "./services/recipeService"
+import { AuthContext } from "./contexts/AuthContext"
+
 
 function App() {
 
   const [recipes, setRecipes] = useState([]);
-  
+  const [auth, setAuth] = useState({});
+
+  const userLogin = (authData) => {
+    setAuth(authData)
+  }
+
 
   return (
-    <div className="App">
-      <Header />
-      <main id="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/recipes" element={<Recipe />} />
-          <Route path="/new-recipe" element={<Recipe />} />
+    <AuthContext.Provider value={{ auth, userLogin }}>
+      <div className="App">
+        <Header />
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recipes" element={<Recipe />} />
+            <Route path="/new-recipe" element={<Recipe />} />
 
-        </Routes>
+          </Routes>
 
-      </main>
-    </div>
+        </main>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
