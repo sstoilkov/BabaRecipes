@@ -5,16 +5,16 @@ export const Header = () => {
         <header>
             <h1>
                 {/* <Link className="home" to="/"> */}
-                    GamesPlay
+                    Baba Recipes
                 {/* </Link> */}
             </h1>
             <nav>
-                {/* <Link to="/catalog"> */}
-                    All games
+                {/* <Link to="/recipe-catalog"> */}
+                    All recipes
                 {/* </Link> */}
                 <div id="user">
                     {/* <Link to="/create"> */}
-                        Create Game </div>
+                        Create Recipe </div>
                     {/* </Link>
                     <Link to="/logout"> */}
                     <div>
