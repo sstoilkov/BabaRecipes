@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Register = () => {
     return (
         <section id="register-page" className="content auth">

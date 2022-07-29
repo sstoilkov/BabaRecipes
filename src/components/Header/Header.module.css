@@ -1,5 +1,5 @@
 body {
-    background-image: url('../../../public/images/cook-2364221_1280.jpg');
+    background-image: url('./background/cook-2364221_1280.jpg');
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

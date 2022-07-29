@@ -1,4 +1,4 @@
-
+import React from 'react'
 import './Header.module.css'
 
 export const Header = () => {

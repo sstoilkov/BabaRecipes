@@ -1,3 +1,4 @@
+import React from "react";
 import RecipeItem from "./RecipeItem/RecipeItem"
 
 export const Recipe = () => {
