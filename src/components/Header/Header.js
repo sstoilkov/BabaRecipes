@@ -1,9 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
 import { Link } from "react-router-dom"
+
+import { AuthContext } from '../../contexts/AuthContext'
 
 import './Header.module.css'
 
 export const Header = () => {
+    const { user } = useContext(AuthContext);
 
     return (
         <header>
@@ -13,26 +17,29 @@ export const Header = () => {
                 </Link>
             </h1>
             <nav>
+                {user.email && <span>{user.email}</span>}
                 <Link to="/recipes">
                     All recipes
                 </Link>
-                <div id="user">
-                    <Link to="/new-recipe">
-                       New Recipe
-                    </Link>
-                    <Link to="/logout">
-                        Logout
-                    </Link>
-                </div>
+                {user.email
+                    ? <div id="user">
+                        <Link to="/new-recipe">
+                            New Recipe
+                        </Link>
+                        <Link to="/logout">
+                            Logout
+                        </Link>
+                    </div>
 
-                <div id="guest">
-                    <Link to="/login">
-                        Login
-                    </Link>
-                    <Link to="/register">
-                        Register
-                    </Link>
-                </div>
+                    : <div id="guest">
+                        <Link to="/login">
+                            Login
+                        </Link>
+                        <Link to="/register">
+                            Register
+                        </Link>
+                    </div>
+                }
             </nav >
         </header >
     );
