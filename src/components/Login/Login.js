@@ -1,4 +1,4 @@
-const Login = () => {
+export const Login = () => {
 
     return (
         <section id="login-page" className="auth">
@@ -27,4 +27,3 @@ const Login = () => {
     );
 }
 
-export default Login;
