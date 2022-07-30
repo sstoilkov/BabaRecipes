@@ -21,9 +21,13 @@ function App() {
     setAuth(authData)
   }
 
+  const userLogout = () => {
+    setAuth({});
+  }
+
 
   return (
-    <AuthContext.Provider value={{ user: auth, userLogin }}>
+    <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
       <div className="App">
         <Header />
         <main id="main-content">
