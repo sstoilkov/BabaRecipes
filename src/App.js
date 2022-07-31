@@ -10,12 +10,13 @@ import { Recipe } from "./components/Recipe/Recipe";
 
 import * as recipeService from "./services/recipeService"
 import { AuthContext } from "./contexts/AuthContext"
+import { useLocalStorate } from "./hooks/useLocalStorage";
 
 
 function App() {
 
   const [recipes, setRecipes] = useState([]);
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useLocalStorate('auth',{});
 
   const userLogin = (authData) => {
     setAuth(authData)
