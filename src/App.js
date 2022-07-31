@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { Home } from "./components/Home/Home";
@@ -39,6 +39,13 @@ function App() {
     navigate('/recipes');
   };
 
+  useEffect(() => {
+    recipeService.getAll()
+      .then(result => {
+        setRecipes(result);
+      });
+  }, []);
+
 
   return (
     <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
@@ -46,11 +53,11 @@ function App() {
         <Header />
         <main id="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home recipes={recipes}/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/recipes" element={<Recipe />} />
+            <Route path="/recipes" element={<Recipe recipes={recipes}/>} />
             <Route path="/new-recipe" element={<AddRecipe addRecipeHandler={addRecipeHandler} />} />
 
           </Routes>
