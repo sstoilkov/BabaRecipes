@@ -1,8 +1,20 @@
-export const AddRecipe = () => {
+import React from "react";
+
+import * as recipeService from "../../services/recipeService"
+
+export const AddRecipe = (
+    { addRecipeHandler }
+) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        // const gameData = Object.fromEntries(new FormData(e.target));
+        const recipeData = Object.fromEntries(new FormData(e.target));
+
+
+        recipeService.create(recipeData)
+            .then(result => {
+                addRecipeHandler(result);
+            })
 
         // addGameHandler(gameData)
     };
@@ -44,9 +56,13 @@ export const AddRecipe = () => {
                         placeholder="Upload a photo..."
                     />
 
-                    <label htmlFor="summary">Summary:</label>
+                    <label htmlFor="ingredients">Ingredients:</label>
 
-                    <textarea name="summary" id="summary" defaultValue={""} />
+                    <textarea name="ingredients" id="ingredients" defaultValue={""} />
+
+                    <label htmlFor="direction">Direction:</label>
+
+                    <textarea name="direction" id="direction" defaultValue={""} />
 
                     <input
                         className="btn submit"
