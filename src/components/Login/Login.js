@@ -1,9 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { AuthContext } from "../../contexts/AuthContext";
 import * as AuthService from "../../services/authService";
+import styles from "./Login.module.css"
+
 
 export const Login = () => {
     const { userLogin } = useContext(AuthContext)
@@ -28,24 +30,25 @@ export const Login = () => {
     }
 
     return (
-        <section id="login-page" className="auth">
+        <section id="login-page" className={styles.loginPage}>
             <form id="login" onSubmit={onSubmit}>
-                <div className="container">
-                    <div className="brand-logo" />
+                <div className={styles.container}>
+                    <div className={styles.brandLogo} />
                     <h1>Login</h1>
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Sokka@gmail.com"
+                        placeholder="Example@example.com"
                     />
                     <label htmlFor="login-pass">Password:</label>
                     <input type="password" id="login-pass" name="password" />
-                    <input type="submit" className="btn submit" value="Login" />
-                    <p className="field">
-                        <span>
-                            If you don't have profile click <a href="#">here</a>
+                    <input type="submit" className={styles.btnSubmit} value="Login" />
+                    <p className={styles.noProfile}>
+                        <span >
+                            <Link to="/register" />
+                            If you don't have profile click here
                         </span>
                     </p>
                 </div>

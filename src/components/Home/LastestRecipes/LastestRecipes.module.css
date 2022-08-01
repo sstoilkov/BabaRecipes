@@ -1,0 +1,80 @@
+.recipe {
+    box-shadow: 0px 0px 30px 0px;
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: auto;
+    color: rgb(254, 251, 250);
+    background-image: url(https://i.stack.imgur.com/jGlzr.png)
+}
+
+.imageWrap {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.imageWrap>img {
+    max-width: 100%;
+}
+
+.recipe>h3 {
+    font-family: "Agency FB";
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+.recipe>h4 {
+    font-family: "Agency FB";
+    font-size: px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-content>h4 {
+    color: #c2d4f8;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.detailsBtn {
+    background-color: #e7a109;
+    font-size: 1.4rem;
+    padding-top: 20px;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
+}
+
+.dataButtons {
+    font-size: 1.4rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.btn.detailsBtn:hover {
+    background-color: rgb(192, 129, 117);
+    color: white;
+}
+

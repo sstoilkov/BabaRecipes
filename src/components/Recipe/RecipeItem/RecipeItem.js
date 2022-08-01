@@ -1,16 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const RecipeItem = () => {
+import styles from './RecipeItem.module.css'
+
+export const RecipeItem = ({
+    recipes
+}) => {
+
     return (
-        <div className="allRecipes">
-            <div className="allRecipes-info">
-                <img src="https://2.bp.blogspot.com/-K7Q8Fyl4r5U/VsT-pn9R6XI/AAAAAAAA39I/tVaT7aHOzLQ/s1600/pizza.gif" />
-                <h6>Category: Pizza</h6>
-                <h2>Margarita</h2>
-                {/* <Link to={`/catalog/${game._id}`} className="details-button">
-                    Details
-                </Link> */}
-            </div>
+        <div className={styles.allRecipes}>
+            <div className={styles.allRecipesInfo}>
+
+            <h2 className={styles.welcomeMessage}>{recipes.title}</h2>
+            <h6>Category: {recipes.category}</h6>
+            {recipes.imageUrl
+                ? <img src={recipes.imageUrl} />
+                : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
+            <Link to={`/recipes/${recipes._id}`} className={styles.detailsButton}>
+                Details
+            </Link>
         </div>
+     </div >
+
     );
 };

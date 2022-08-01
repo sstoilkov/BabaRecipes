@@ -1,28 +1,30 @@
 import React from "react";
+import { useContext } from "react";
 
+import { RecipeContext } from "../../contexts/RecipeContext";
 import * as recipeService from "../../services/recipeService"
+import styles from "./AddRecipe.module.css"
 
-export const AddRecipe = (
-    { addRecipeHandler }
-) => {
+export const AddRecipe = () => {
+    const {recipeAdd}= useContext(RecipeContext)
+
     const onSubmit = (e) => {
         e.preventDefault();
 
         const recipeData = Object.fromEntries(new FormData(e.target));
 
-
         recipeService.create(recipeData)
-            .then(result => {
-                addRecipeHandler(result);
-            })
+            // .then(result => {
+            //     recipeAdd(result);
+            // })
+            
 
-        // addGameHandler(gameData)
     };
 
     return (
-        <section id="create-page" className="auth">
+        <section id="create-page" className={styles.addRecipe}>
             <form id="create" onSubmit={onSubmit}>
-                <div className="container">
+                <div className={styles.container}>
                     <h1>New Recipe</h1>
                     <label htmlFor="leg-title">Recipe name:</label>
                     <input
@@ -65,9 +67,9 @@ export const AddRecipe = (
                     <textarea name="direction" id="direction" defaultValue={""} />
 
                     <input
-                        className="btn submit"
+                        className={styles.btnSubmit}
                         type="submit"
-                        value="Create Recipe"
+                        value="Add New Recipe"
                     />
                 </div>
             </form>
