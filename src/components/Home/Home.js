@@ -15,9 +15,10 @@ export const Home = () => {
             </div>
             <div id="home-page" className={styles.homePage}>
                 <h1>Latest Recipes</h1>
-                
+
                 {recipes.length > 0
-                    ? recipes.map(x => <LastestRecipes key={x._id} recipes={x} />)
+                    ? recipes.slice(-3).map(x => <LastestRecipes key={x._id} recipes={x} />)
+
                     : <p className={styles.noArticles}>No recipes yet</p>
                 }
 
