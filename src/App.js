@@ -29,8 +29,8 @@ function App() {
     setAuth({});
   }
 
-  const recipeAdd = () => {
-
+  const recipeAdd = (recipeData) => {
+   setRecipes(recipes.concat(recipeData))
     navigate('/recipes');
   };
 
@@ -39,7 +39,7 @@ function App() {
       .then(result => {
         setRecipes(result);
       });
-  }, [recipeAdd]);
+  }, []);
 
 
   return (

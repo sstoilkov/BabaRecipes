@@ -15,6 +15,8 @@ export const AddRecipe = () => {
 
         recipeService.create(recipeData)
 
+        recipeAdd(recipeData)
+
     };
 
     return (

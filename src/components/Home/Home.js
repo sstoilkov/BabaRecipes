@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 
 import { RecipeContext } from "../../contexts/RecipeContext";
-import LastestRecipes from "./LastestRecipes/LastestRecipes";
+import { LastestRecipes } from "./LastestRecipes/LastestRecipes";
 import styles from "./Home.module.css"
 
 export const Home = () => {
@@ -16,8 +16,8 @@ export const Home = () => {
             <div id="home-page" className={styles.homePage}>
                 <h1>Latest Recipes</h1>
 
-                {recipes.length > 0
-                    ? recipes.slice(-3).map(x => <LastestRecipes key={x._id} recipes={x} />)
+                {recipes.length > 1
+                    ? recipes.slice(-2).map(x => <LastestRecipes key={x._id} recipes={x} />)
 
                     : <p className={styles.noArticles}>No recipes yet</p>
                 }

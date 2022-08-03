@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from "./LastestRecipes.module.css"
-const LastestRecipes = (props) => {
+
+export const LastestRecipes = (props) => {
     return (
         <div className={styles.recipe}>
             <div className={styles.imageWrap}>
@@ -20,5 +21,3 @@ const LastestRecipes = (props) => {
         </div>
     );
 };
-
-export default LastestRecipes;
