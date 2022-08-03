@@ -8,6 +8,7 @@ import { Logout } from "./components/Logout/Logout"
 import { Register } from "./components/Register/Register"
 import { Recipe } from "./components/Recipe/Recipe";
 import { AddRecipe } from "./components/AddRecipe/AddRecipe";
+import { EditRecipe } from "./components/EditRecipe/EditRecipe";
 
 import * as recipeService from "./services/recipeService"
 import { useLocalStorate } from "./hooks/useLocalStorage";
@@ -17,7 +18,7 @@ import { RecipeContext } from "./contexts/RecipeContext"
 
 function App() {
 
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([{}]);
   const [auth, setAuth] = useLocalStorate('auth', {});
 
   const navigate = useNavigate();
@@ -29,10 +30,14 @@ function App() {
     setAuth({});
   }
 
-  const recipeAdd = (recipeData) => {
-   setRecipes(recipes.concat(recipeData))
-    navigate('/recipes');
-  };
+  const recipeAdd = () => {
+
+    recipeService.getAll()
+      .then(result => {
+        setRecipes(result)
+      })
+      .then(navigate('/recipes'))
+  }
 
   useEffect(() => {
     recipeService.getAll()
@@ -55,6 +60,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/recipes" element={<Recipe />} />
               <Route path="/new-recipe" element={<AddRecipe />} />
+              <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
 
             </Routes>
           </main>
