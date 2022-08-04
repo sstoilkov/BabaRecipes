@@ -6,10 +6,10 @@ import styles from "./LastestRecipes.module.css"
 export const LastestRecipes = (props) => {
     return (
         <div className={styles.recipe}>
-            <div className={styles.imageWrap}>
+            <div>
                 {props.recipes.imageUrl
-                    ? <img src={props.recipes.imageUrl} />
-                    : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
+                    ? <img className={styles.imageWrap} src={props.recipes.imageUrl} />
+                    : <img className={styles.imageWrap} src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
             </div>
             <h3>{props.recipes.title}</h3>
             <h4>{props.recipes.category} - category</h4>
