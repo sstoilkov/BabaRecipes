@@ -12,3 +12,7 @@ export const getOne = (recipeId) => {
 export const create = (recipeData) => {
     request.post(baseUrl, recipeData)
 }
+
+export const edit = (recipeData, recipeId) => {
+    request.put(`${baseUrl}/${recipeId}`, recipeData)
+}

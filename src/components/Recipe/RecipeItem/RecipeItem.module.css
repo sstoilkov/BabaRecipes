@@ -54,3 +54,17 @@
     margin-top: auto;
     margin-left: 20px;
 }
+
+.editButton {
+    background-color: #f4b116;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 30px;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: auto;
+    margin-left: 120px;
+}

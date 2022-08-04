@@ -27,13 +27,13 @@ textarea {
 
 .addRecipe {
     position: relative;
-    width: 650px;
+    width: 700px;
     height: auto;
     border-radius: 20px;
-    padding: 40px;
+    padding: 20px;
     box-sizing: border-box;
-    background: #c38107;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    background:transparent;
+    box-shadow: 0px 0px 5px 0px #f8f9fa, -14px -14px 20px #191c21;
 }
 
 .container {
@@ -69,18 +69,9 @@ label {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-label:nth-of-type(2) {
-    margin-top: 20px;
-}
-
 input::placeholder {
     color: rgba(184, 179, 179, 0.678);
 };
-
-
-label[for="female"] {
-    margin-top: 10px;
-}
 
 input[type="tittle"],
 input[type="category"],
@@ -102,10 +93,10 @@ label[for="terms"]>input {
 
 .btnSubmit {
     margin-top: 30px;
-    background: #050505;
+    background: #f7f7f7;
     height: 60px;
     border-radius: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 26px;
     cursor: pointer;
     font-weight: 900;
@@ -118,19 +109,3 @@ label[for="terms"]>input {
     background-color: #b86b24;
 }
 
-.container {
-    text-align: left;
-    margin-top: 0px;
-}
-
-.noProfile {
-    position: absolute;
-    font-size: 18px;
-    bottom: 17px;
-    right: 8px;
-    text-decoration: none;
-    color: black;
-    background: rgb(235, 157, 142);
-    border-radius: 10px;
-    padding: 5px;
-}

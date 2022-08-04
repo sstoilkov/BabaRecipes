@@ -46,7 +46,7 @@ export const Register = () => {
                     <input type="password" name="password" id="register-password" />
                     <label htmlFor="con-pass">Confirm Password:</label>
                     <input type="password" name="confirm-password" id="confirm-password" />
-                    <input className={styles.btnSubmit} type="submit" defaultValue="Register" />
+                    <input className={styles.btnSubmit} type="submit" value="Register" />
                     <p className="field">
                     </p>
                 </div>

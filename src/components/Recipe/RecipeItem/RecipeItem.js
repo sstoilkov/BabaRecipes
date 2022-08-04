@@ -11,19 +11,19 @@ export const RecipeItem = ({
         <div className={styles.allRecipes}>
             <div className={styles.allRecipesInfo}>
 
-            <h2 className={styles.welcomeMessage}>{recipes.title}</h2>
-            <h6>Category: {recipes.category}</h6>
-            {recipes.imageUrl
-                ? <img src={recipes.imageUrl} />
-                : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
-            <Link to={`/recipes/${recipes._id}`} className={styles.detailsButton}>
-                Details
-            </Link>
-            <Link to={`/recipes/${recipes._id}/edit`} className={styles.detailsButton}>
-                Edit
-            </Link>
-        </div>
-     </div >
+                <h2 className={styles.welcomeMessage}>{recipes.title}</h2>
+                <h6>Category: {recipes.category}</h6>
+                {recipes.imageUrl
+                    ? <img src={recipes.imageUrl} />
+                    : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
+                <Link to={`/recipes/${recipes._id}`} className={styles.detailsButton}>
+                    Details
+                </Link>
+                <Link to={`/recipes/${recipes._id}/edit`} className={styles.editButton}>
+                    Edit
+                </Link>
+            </div>
+        </div >
 
     );
 };

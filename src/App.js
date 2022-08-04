@@ -26,32 +26,40 @@ function App() {
     setAuth(authData)
   }
 
+  useEffect(() => {
+    recipesUpdate();
+  }, []);
+
   const userLogout = () => {
     setAuth({});
   }
 
+  const recipeEdit = () => {
+    recipesUpdate()
+    .then(navigate('/'))
+  }
+
   const recipeAdd = () => {
 
-    recipeService.getAll()
-      .then(result => {
-        setRecipes(result)
-      })
+    recipesUpdate()
       .then(navigate('/recipes'))
   }
 
-  useEffect(() => {
+  const recipesUpdate = () => {
     recipeService.getAll()
       .then(result => {
         setRecipes(result);
       });
-  }, []);
+  }
+
+
 
 
   return (
     <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
       <div className="App">
         <Header />
-        <RecipeContext.Provider value={{ recipes, recipeAdd }}>
+        <RecipeContext.Provider value={{ recipes, recipeAdd, recipeEdit }}>
           <main id="main-content">
             <Routes>
               <Route path="/" element={<Home />} />

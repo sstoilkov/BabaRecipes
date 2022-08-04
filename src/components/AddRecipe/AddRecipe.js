@@ -24,7 +24,7 @@ export const AddRecipe = () => {
             <form id="create" onSubmit={onSubmit}>
                 <div className={styles.container}>
                     <h1>New Recipe</h1>
-                    <label htmlFor="leg-title">Recipe name:</label>
+                    <label htmlFor="leg-title">Recipe title:</label>
                     <input
                         type="text"
                         id="title"
@@ -67,7 +67,7 @@ export const AddRecipe = () => {
                     <input
                         className={styles.btnSubmit}
                         type="submit"
-                        value="Add New Recipe"
+                        value="New Recipe"
                     />
                 </div>
             </form>

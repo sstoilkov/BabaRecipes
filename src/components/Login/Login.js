@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { AuthContext } from "../../contexts/AuthContext";
 import * as AuthService from "../../services/authService";
@@ -29,6 +29,10 @@ export const Login = () => {
             });
     }
 
+    const onClick = () => {
+        navigate('/register')
+    }
+
     return (
         <section id="login-page" className={styles.loginPage}>
             <form id="login" onSubmit={onSubmit}>
@@ -46,8 +50,7 @@ export const Login = () => {
                     <input type="password" id="login-pass" name="password" />
                     <input type="submit" className={styles.btnSubmit} value="Login" />
                     <p className={styles.noProfile}>
-                        <span >
-                            <Link to="/register" />
+                        <span onClick={onClick}>
                             If you don't have profile click here
                         </span>
                     </p>
