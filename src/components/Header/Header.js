@@ -19,10 +19,9 @@ export const Header = () => {
 
             <nav>
 
-            <div className={styles.currentUser}>
-                {user.email && <span>Logged as: {user.email}</span>}
-            </div>
-
+                <div className={styles.currentUser}>
+                    {user.email && <span>Logged as: {user.email}</span>}
+                </div>
 
                 <Link to="/recipes">
                     All recipes
@@ -43,6 +42,12 @@ export const Header = () => {
                         </Link>
                         <Link to="/register">
                             Register
+                        </Link>
+                        <Link to="/contacts">
+                            Contacts
+                        </Link>
+                        <Link to="/about">
+                            About
                         </Link>
                     </div>
                 }

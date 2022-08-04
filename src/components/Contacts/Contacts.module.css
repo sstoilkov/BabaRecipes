@@ -1,0 +1,19 @@
+.contactsPage {
+    width: auto;
+    padding-right: 15px;
+    padding-top: 20px;
+    justify-content: right;
+    padding-left: 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+p {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    margin-bottom: auto;
+    font-size: 30px;
+    text-align: left;
+}

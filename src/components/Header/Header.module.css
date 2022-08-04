@@ -35,7 +35,7 @@ header {
     padding: 10px;
 }
 
-header h1 {
+header {
     display: inline-block;
     background-color: #5b1807;
     color: white;

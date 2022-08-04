@@ -16,6 +16,8 @@ import { AuthContext } from "./contexts/AuthContext"
 import { RecipeContext } from "./contexts/RecipeContext"
 import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
 import "./App.module.css"
+import { About } from "./components/About/About";
+import { Contacts } from "./components/Contacts/Contacts";
 
 
 function App() {
@@ -72,6 +74,8 @@ function App() {
               <Route path="/new-recipe" element={<AddRecipe />} />
               <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
               <Route path="/recipes/:recipeId/" element={<RecipeDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contacts />} />
             </Routes>
           </main>
         </RecipeContext.Provider>
