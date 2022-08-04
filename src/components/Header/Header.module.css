@@ -25,6 +25,11 @@ footer {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.currentUser {
+    font-size: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 header {
     position: relative;
     padding: 10px;

@@ -20,7 +20,7 @@ export const Header = () => {
             <nav>
 
             <div className={styles.currentUser}>
-                {user.email && <span>{user.email}</span>}
+                {user.email && <span>Logged as: {user.email}</span>}
             </div>
 
 
