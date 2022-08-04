@@ -1,0 +1,86 @@
+.detailPage {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    max-width: 100%;
+    margin: 15px;
+    overflow: hidden;
+    width: 600px auto;
+    min-height: 210px;
+    height: auto;
+    position: relative;
+}
+
+.title {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    font-size: 30px;
+    left: 20px;
+
+}
+
+.img {
+    border: 1px solid rgb(243, 161, 20);
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    float: right;
+    border-radius: 10%;
+}
+
+.category {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.cookingTime {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.ingredients {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+.ingredients>h3 {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.direction {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+.direction>h3 {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.btn {
+    background-color: #f4b116;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: auto;
+    left: 900px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+
+ul {
+    list-style-type: none;
+}

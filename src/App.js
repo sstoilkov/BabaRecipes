@@ -14,6 +14,8 @@ import * as recipeService from "./services/recipeService"
 import { useLocalStorate } from "./hooks/useLocalStorage";
 import { AuthContext } from "./contexts/AuthContext"
 import { RecipeContext } from "./contexts/RecipeContext"
+import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
+import "./App.module.css"
 
 
 function App() {
@@ -36,12 +38,11 @@ function App() {
 
   const recipeEdit = () => {
     recipesUpdate()
-    navigate('/')
   }
 
   const recipeAdd = () => {
     recipesUpdate()
-    navigate('/')
+   
   }
 
 
@@ -49,6 +50,7 @@ function App() {
     recipeService.getAll()
       .then(result => {
         setRecipes(result);
+        navigate('/')
       });
   }
 
@@ -69,7 +71,7 @@ function App() {
               <Route path="/recipes" element={<Recipe />} />
               <Route path="/new-recipe" element={<AddRecipe />} />
               <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
-
+              <Route path="/recipes/:recipeId/" element={<RecipeDetails />} />
             </Routes>
           </main>
         </RecipeContext.Provider>

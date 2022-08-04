@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 import { AuthContext } from '../../contexts/AuthContext'
 
-import './Header.module.css'
+import styles from './Header.module.css'
 
 export const Header = () => {
     const { user } = useContext(AuthContext);
@@ -12,12 +12,18 @@ export const Header = () => {
     return (
         <header>
             <h1>
-                <Link className="home" to="/">
+                <Link to="/">
                     Baba Recipes
                 </Link>
             </h1>
+
             <nav>
+
+            <div className={styles.currentUser}>
                 {user.email && <span>{user.email}</span>}
+            </div>
+
+
                 <Link to="/recipes">
                     All recipes
                 </Link>

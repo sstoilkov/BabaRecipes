@@ -24,6 +24,7 @@ export const EditRecipe = () => {
         const recipeData = Object.fromEntries(new FormData(e.target));
         recipeService.edit(recipeData, currentRecipe._id)
             .then(recipeEdit())
+           navigation('/recipes')
     }
 
     const naviHome = () => {
