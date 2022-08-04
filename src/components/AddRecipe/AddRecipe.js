@@ -14,8 +14,7 @@ export const AddRecipe = () => {
         const recipeData = Object.fromEntries(new FormData(e.target));
 
         recipeService.create(recipeData)
-
-        recipeAdd(recipeData)
+        recipeAdd()
 
     };
 

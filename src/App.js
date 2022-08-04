@@ -36,14 +36,14 @@ function App() {
 
   const recipeEdit = () => {
     recipesUpdate()
-    .then(navigate('/'))
+    navigate('/')
   }
 
   const recipeAdd = () => {
-
     recipesUpdate()
-      .then(navigate('/recipes'))
+    navigate('/')
   }
+
 
   const recipesUpdate = () => {
     recipeService.getAll()
@@ -59,7 +59,7 @@ function App() {
     <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
       <div className="App">
         <Header />
-        <RecipeContext.Provider value={{ recipes, recipeAdd, recipeEdit }}>
+        <RecipeContext.Provider value={{ recipes, recipeAdd, recipeEdit, recipesUpdate }}>
           <main id="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
