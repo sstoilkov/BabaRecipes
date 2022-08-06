@@ -43,7 +43,18 @@ export const RecipeDetails = () => {
                         <p>Category: {currentRecipe.category}</p>
                     </div>
                 </li>
-                <img className={styles.img} src={currentRecipe.imageUrl} width="300" height="300" />
+
+                {currentRecipe.imageUrl
+                    ? <img className={styles.img}
+                        src={currentRecipe.imageUrl}
+                        width="300" height="300"
+                    />
+                    : <img className={styles.img}
+                        src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"}
+                        width="300" height="300"
+                    />
+                }
+
                 <li>
                     <div className={styles.cookingTime}>
                         <p >Cooking time: {currentRecipe.cookingTime} min</p>
@@ -61,10 +72,6 @@ export const RecipeDetails = () => {
                         <h3>Direction: </h3>
                         <p >{currentRecipe.direction}</p>
                     </div>
-
-                </li>
-
-                <li>
 
                 </li>
 

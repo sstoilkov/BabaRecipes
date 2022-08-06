@@ -18,3 +18,11 @@
     text-transform: uppercase;
     text-align: center;
 }
+
+.noArticles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB";
+}

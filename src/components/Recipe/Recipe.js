@@ -15,7 +15,7 @@ export const Recipe = () => {
 
             {recipes.length > 0
                 ? recipes.map(x => <RecipeItem key={x._id} recipes={x} />)
-                : <h3 className="no-articles">No recipe yet</h3>
+                : <h3 className={styles.noArticles}>No recipes yet</h3>
             }
 
         </section>
