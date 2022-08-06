@@ -9,9 +9,7 @@ import { Register } from "./components/Register/Register"
 import { Recipe } from "./components/Recipe/Recipe";
 import { AddRecipe } from "./components/AddRecipe/AddRecipe";
 import { EditRecipe } from "./components/EditRecipe/EditRecipe";
-
-import { useLocalStorate } from "./hooks/useLocalStorage";
-import { AuthContext } from "./contexts/AuthContext"
+import { AuthProvider } from "./contexts/AuthContext"
 import { RecipeProvider } from "./contexts/RecipeContext"
 import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
 import "./App.module.css"
@@ -20,21 +18,8 @@ import { Contacts } from "./components/Contacts/Contacts";
 
 
 function App() {
-
-
-  const [auth, setAuth] = useLocalStorate('auth', {});
-
-  const userLogin = (authData) => {
-    setAuth(authData)
-  }
-
-
-  const userLogout = () => {
-    setAuth({});
-  }
-
   return (
-    <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
+    <AuthProvider>
       <div className="App">
         <Header />
         <RecipeProvider>
@@ -54,8 +39,7 @@ function App() {
           </main>
         </RecipeProvider>
       </div>
-    </AuthContext.Provider>
+    </AuthProvider >
   );
 }
-
 export default App;
