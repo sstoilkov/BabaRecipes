@@ -14,8 +14,8 @@ export const RecipeItem = ({
                 <h2 className={styles.welcomeMessage}>{recipes.title}</h2>
                 <h6>Category: {recipes.category}</h6>
                 {recipes.imageUrl
-                    ? <img src={recipes.imageUrl} />
-                    : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
+                    ? <img src={recipes.imageUrl} alt="" />
+                    : <img src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} alt="" />}
                 <Link to={`/recipes/${recipes._id}`} className={styles.detailsButton}>
                     Details
                 </Link>

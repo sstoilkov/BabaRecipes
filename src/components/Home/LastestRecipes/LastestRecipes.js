@@ -8,8 +8,8 @@ export const LastestRecipes = (props) => {
         <div className={styles.recipe}>
             <div>
                 {props.recipes.imageUrl
-                    ? <img className={styles.imageWrap} src={props.recipes.imageUrl} />
-                    : <img className={styles.imageWrap} src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} />}
+                    ? <img className={styles.imageWrap} src={props.recipes.imageUrl} alt="" />
+                    : <img className={styles.imageWrap} src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"} alt="" />}
             </div>
             <h3>{props.recipes.title}</h3>
             <h4>{props.recipes.category} - category</h4>

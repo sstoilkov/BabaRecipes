@@ -1,6 +1,6 @@
 import React from 'react';
-import { useContext, useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import * as recipeService from "../../services/recipeService"
 import styles from "./RecipeDetails.module.css"
@@ -47,10 +47,12 @@ export const RecipeDetails = () => {
                 {currentRecipe.imageUrl
                     ? <img className={styles.img}
                         src={currentRecipe.imageUrl}
+                        alt=""
                         width="300" height="300"
                     />
                     : <img className={styles.img}
                         src={"https://www.maiz.in/wp-content/uploads/2020/10/generic-food-icon.png"}
+                        alt=""
                         width="300" height="300"
                     />
                 }

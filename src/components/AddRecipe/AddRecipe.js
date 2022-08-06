@@ -6,7 +6,7 @@ import * as recipeService from "../../services/recipeService"
 import styles from "./AddRecipe.module.css"
 
 export const AddRecipe = () => {
-    const {recipeAdd}= useContext(RecipeContext)
+    const { recipeAdd } = useContext(RecipeContext)
 
     const onSubmit = (e) => {
         e.preventDefault();
