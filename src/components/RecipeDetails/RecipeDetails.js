@@ -1,14 +1,16 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import * as recipeService from "../../services/recipeService"
+import { RecipeContext } from "../../contexts/RecipeContext"
 import styles from "./RecipeDetails.module.css"
 
 export const RecipeDetails = () => {
 
     const [currentRecipe, setCurrentRecipe] = useState({});
     const { recipeId } = useParams();
+    const { recipesUpdate } = useContext(RecipeContext)
 
     const navigate = useNavigate();
 
@@ -19,6 +21,15 @@ export const RecipeDetails = () => {
             })
     }, [])
 
+    const recipeDeleteHandler = () => {
+        const confirmation = window.confirm('Are you sure you want to delete this recipe?');
+
+        if (confirmation) {
+            recipeService.remove(recipeId)
+                    recipesUpdate();
+            navigate('/');
+        }
+    }
 
     return (
 
@@ -33,7 +44,7 @@ export const RecipeDetails = () => {
                             Edit
                         </button>
 
-                        <button className={styles.btn}>
+                        <button className={styles.btn} onClick={recipeDeleteHandler}>
                             Delete
                         </button>
                     </div>

@@ -13,6 +13,7 @@ export const Home = () => {
             <div className={styles.welcomeMessage}>
                 <h2>Welcome to Baba Recipes. Enjoy cooking!</h2>
             </div>
+            {(recipes !== undefined)} ?
             <div id="home-page" className={styles.homePage}>
                 <h1>Latest Recipes</h1>
 
@@ -21,7 +22,6 @@ export const Home = () => {
 
                     : <p className={styles.noArticles}>No recipes yet</p>
                 }
-
             </div>
         </section>
     );

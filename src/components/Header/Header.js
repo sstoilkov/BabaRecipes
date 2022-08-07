@@ -26,6 +26,14 @@ export const Header = () => {
                 <Link to="/recipes">
                     All recipes
                 </Link>
+                <div>
+                    <Link to="/contacts">
+                        Contacts
+                    </Link>
+                    <Link to="/about">
+                        About
+                    </Link>
+                </div>
                 {user.email
                     ? <div id="user">
                         <Link to="/new-recipe">
@@ -43,13 +51,8 @@ export const Header = () => {
                         <Link to="/register">
                             Register
                         </Link>
-                        <Link to="/contacts">
-                            Contacts
-                        </Link>
-                        <Link to="/about">
-                            About
-                        </Link>
                     </div>
+
                 }
             </nav >
         </header >

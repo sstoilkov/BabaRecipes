@@ -9,7 +9,7 @@
     text-align: left;
 }
 
-.contactsPage>p {
+.contactsPage>ul {
     display: inline-block;
     background-color: transparent;
     color: white;

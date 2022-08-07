@@ -16,3 +16,7 @@ export const create = (recipeData) => {
 export const edit = (recipeData, recipeId) => {
     request.put(`${baseUrl}/${recipeId}`, recipeData)
 }
+
+export const remove = (recipeId) => {
+    request.del(`${baseUrl}/${recipeId}`)
+}
