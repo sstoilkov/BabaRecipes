@@ -18,7 +18,7 @@ export const Home = () => {
                 <h1>Latest Recipes</h1>
 
                 {recipes.length > 0
-                    ? recipes.slice(Math.max(-4, -recipes.length)).map(
+                    ? recipes.slice(Math.max(-4, -recipes.length)).reverse().map(
                         x => <LastestRecipes key={x._id} recipes={x}
                         />)
                     : <p className={styles.noArticles}>No recipes yet</p>
