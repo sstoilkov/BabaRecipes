@@ -4,13 +4,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import * as recipeService from "../../services/recipeService"
 import { RecipeContext } from "../../contexts/RecipeContext"
+import { AuthContext } from "../../contexts/AuthContext"
 import styles from "./RecipeDetails.module.css"
 
 export const RecipeDetails = () => {
 
     const [currentRecipe, setCurrentRecipe] = useState({});
     const { recipeId } = useParams();
-    const { recipesUpdate } = useContext(RecipeContext)
+    const { recipesUpdate } = useContext(RecipeContext);
+    const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -26,27 +28,32 @@ export const RecipeDetails = () => {
 
         if (confirmation) {
             recipeService.remove(recipeId)
-                    recipesUpdate();
+            recipesUpdate();
             navigate('/');
         }
+
     }
 
     return (
 
         <section id="detailPage" className={styles.detailPage}>
-
             <ul>
-
                 <li>
                     <h1 className={styles.title}>{currentRecipe.title}</h1>
                     <div>
-                        <button className={styles.btn} onClick={() => navigate(`/recipes/${recipeId}/edit`)}>
-                            Edit
-                        </button>
-
-                        <button className={styles.btn} onClick={recipeDeleteHandler}>
-                            Delete
-                        </button>
+                        {currentRecipe._ownerId === user._id ?
+                            < button className={styles.btn}
+                                onClick={() => navigate(`/recipes/${recipeId}/edit`)}>
+                                Edit
+                            </button>
+                            : <div></div>
+                        }
+                        {currentRecipe._ownerId === user._id ?
+                            <button className={styles.btn} onClick={recipeDeleteHandler}>
+                                Delete
+                            </button>
+                            : <div></div>
+                        }
                     </div>
                 </li>
                 <li>
@@ -67,7 +74,6 @@ export const RecipeDetails = () => {
                         width="300" height="300"
                     />
                 }
-
                 <li>
                     <div className={styles.cookingTime}>
                         <p >Cooking time: {currentRecipe.cookingTime} min</p>
@@ -85,9 +91,7 @@ export const RecipeDetails = () => {
                         <h3>Direction: </h3>
                         <p >{currentRecipe.direction}</p>
                     </div>
-
                 </li>
-
             </ul>
         </section >
     );

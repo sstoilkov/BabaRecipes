@@ -19,9 +19,6 @@ export const RecipeItem = ({
                 <Link to={`/recipes/${recipes._id}`} className={styles.detailsButton}>
                     Details
                 </Link>
-                <Link to={`/recipes/${recipes._id}/edit`} className={styles.editButton}>
-                    Edit
-                </Link>
             </div>
         </div >
 
