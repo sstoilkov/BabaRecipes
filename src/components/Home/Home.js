@@ -13,17 +13,16 @@ export const Home = () => {
             <div className={styles.welcomeMessage}>
                 <h2>Welcome to Baba Recipes. Enjoy cooking!</h2>
             </div>
-            {(recipes !== undefined)} ?
-            <div id="home-page" className={styles.homePage}>
-                <h1>Latest Recipes</h1>
-
+            <div className={styles.homePage}>
+                {(recipes !== undefined)} ?<h1>Latest Recipes</h1>
                 {recipes.length > 0
                     ? recipes.slice(Math.max(-4, -recipes.length)).reverse().map(
-                        x => <LastestRecipes key={x._id} recipes={x}
+                        x => <LastestRecipes key={`${x._id}_${x.title}`} recipes={x}
                         />)
                     : <p className={styles.noArticles}>No recipes yet</p>
                 }
             </div>
+
         </section>
     );
 }

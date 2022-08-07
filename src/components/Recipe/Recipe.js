@@ -14,7 +14,7 @@ export const Recipe = () => {
             <h1>All Recipes</h1>
 
             {recipes.length > 0
-                ? recipes.map(x => <RecipeItem key={x._id} recipes={x} />)
+                ? recipes.map(x => <RecipeItem key={`${x._id}_${x.title}`} recipes={x} />)
                 : <h3 className={styles.noArticles}>No recipes yet</h3>
             }
 
