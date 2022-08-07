@@ -15,7 +15,7 @@ import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
 import "./App.module.css"
 import { About } from "./components/About/About";
 import { Contacts } from "./components/Contacts/Contacts";
-
+import { PrivateRoute } from "./components/common/PrivateRoute"
 
 function App() {
   return (
@@ -30,9 +30,12 @@ function App() {
               <Route path="/logout" element={<Logout />} />
               <Route path="/register" element={<Register />} />
               <Route path="/recipes" element={<Recipe />} />
-              <Route path="/new-recipe" element={<AddRecipe />} />
-              <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
-              <Route path="/recipes/:recipeId/" element={<RecipeDetails />} />
+              <Route element={<PrivateRoute />}
+              >
+                <Route path="/new-recipe" element={<AddRecipe />} />
+                <Route path="/recipes/:recipeId/edit" element={<EditRecipe />} />
+                <Route path="/recipes/:recipeId/" element={<RecipeDetails />} />
+              </Route>
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<Contacts />} />
             </Routes>
