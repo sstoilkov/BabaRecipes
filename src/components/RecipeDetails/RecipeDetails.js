@@ -5,12 +5,17 @@ import { useParams, useNavigate } from 'react-router-dom';
 import * as recipeService from "../../services/recipeService"
 import { RecipeContext } from "../../contexts/RecipeContext"
 import { AuthContext } from "../../contexts/AuthContext"
+import { Comment } from './Comment.js/Comment';
+import * as commentService from "../../services/commentService"
+
 import styles from "./RecipeDetails.module.css"
 
 export const RecipeDetails = () => {
 
     const [currentRecipe, setCurrentRecipe] = useState({});
+    const [comments, setComments] = useState([])
     const { recipeId } = useParams();
+
     const { recipesUpdate } = useContext(RecipeContext);
     const { user } = useContext(AuthContext);
 
@@ -23,6 +28,14 @@ export const RecipeDetails = () => {
             })
     }, [])
 
+    useEffect(() => {
+        commentService.getRecipeById(recipeId)
+            .then(commentList => {
+                setComments(commentList)
+            })
+    }, [])
+
+
     const recipeDeleteHandler = () => {
         const confirmation = window.confirm('Are you sure you want to delete this recipe?');
 
@@ -31,8 +44,21 @@ export const RecipeDetails = () => {
             recipesUpdate();
             navigate('/');
         }
+    }
+
+    const addCommentHandler = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const comment = formData.get('comment');
+        e.target.reset();
+        commentService.create(recipeId, comment)
+        commentService.getRecipeById(recipeId)
+            .then(commentList => {
+                setComments(commentList)
+            });
 
     }
+
 
     return (
 
@@ -91,6 +117,27 @@ export const RecipeDetails = () => {
                         <h3>Direction: </h3>
                         <p >{currentRecipe.direction}</p>
                     </div>
+                </li>
+                <li>
+                    <Comment comments={comments} />
+                </li>
+                <li>
+                    <article className={styles.createCom}>
+                        <label>Add new comment:</label>
+                        <form className={styles.form} onSubmit={addCommentHandler}>
+                            <textarea
+                                className={styles.createCom}
+                                name="comment"
+                                placeholder="Comment......"
+                            />
+
+                            <input
+                                className={styles.btnSubmit}
+                                type="submit"
+                                value="Add Comment"
+                            />
+                        </form>
+                    </article>
                 </li>
             </ul>
         </section >

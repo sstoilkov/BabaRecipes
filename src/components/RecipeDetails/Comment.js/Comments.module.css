@@ -1,0 +1,12 @@
+.comment {
+    width: 400px;
+    display: inline-block;
+    position: static;
+    margin: 10px auto 10px auto;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    margin-left: 60px;
+    background: #f4b116;
+    color: white;
+    word-wrap: break-word;
+}

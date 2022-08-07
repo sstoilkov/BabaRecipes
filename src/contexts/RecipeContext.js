@@ -34,12 +34,15 @@ export const RecipeProvider = ({
             });
     }
 
+  
+
     return (
         <RecipeContext.Provider value={{
             recipes,
             recipeAdd,
             recipeEdit,
-            recipesUpdate
+            recipesUpdate,
+    
         }}>
             {children}
         </RecipeContext.Provider>
