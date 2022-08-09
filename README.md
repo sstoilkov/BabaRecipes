@@ -3,15 +3,15 @@ This is an application for Cooking dishes
 The app is using Softuni practice server.
 
 ## Available pages
-Home
-Login
-Register
-All recipes
-New Recipe
-Edit Recipe
-Details
-Contacts
-About
+- Home
+- Login
+- Register
+- All recipes
+-  Recipe
+- Edit Recipe
+- Details
+- Contacts
+- About
 
 ## Home Page
 On home page you can view the last four recipes added to the app.
