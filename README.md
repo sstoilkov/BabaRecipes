@@ -14,6 +14,26 @@ The app is using Softuni practice server.
 - About
 
 ## Home Page
+
+If you are not login you have access to:
+- Login page
+- Register page
+- Contact page
+- About page
+- All Recipes page
+
+![image](https://user-images.githubusercontent.com/53934110/183759345-cda982f1-bb9d-4d33-b885-a6df8dc55550.png)
+
+After login:
+- You can see which use is logon
+- All recipes on the app
+- Contact page
+- About page
+- New Recipe page
+- Logout
+
+![image](https://user-images.githubusercontent.com/53934110/183759620-773f8310-9500-4632-bb18-cfa009966d28.png)
+
 On home page you can view the last four recipes added to the app.
 And if you are login you can navigate directly to the recipe details by clicking "Details".
 
