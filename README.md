@@ -51,6 +51,7 @@ You can add:
 -  Direction 
 
 and the recipe will be added after clicking "New Recipe" Button.
+
 ![image](https://user-images.githubusercontent.com/53934110/183755749-461a44c3-403f-4107-b1db-3d8f94d7d97a.png)
 
 ## Details Page
@@ -73,11 +74,13 @@ When you correct all the necessary information you can save it by click on "Save
 ## Contact Page
 
 Here you can find some fake contact information.
+
 ![image](https://user-images.githubusercontent.com/53934110/183757814-e7330a5d-e7a4-47ef-8e1f-57604c79631e.png)
 
 ## About Page
 
 Here you can find some info about the app.
+
 ![image](https://user-images.githubusercontent.com/53934110/183757865-a84989de-95e3-4e33-b672-4ddb1a6fad11.png)
 
 
