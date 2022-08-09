@@ -1,71 +1,85 @@
 This is an application for Cooking dishes
+
+This is an application for Cooking dishes
+
+The app is using Softuni practice server.
+
+## Available pages
+Home
+Login
+Register
+All recipes
+New Recipe
+Edit Recipe
+Details
+Contacts
+About
+
+## Home Page
+On home page you can view the last four recipes added to the app.
+And if you are login you can navigate directly to the recipe details by clicking "Details".
+
+![image](https://user-images.githubusercontent.com/53934110/183756119-9bd49a9a-7c34-4970-83e7-c076df5f3612.png)
+
+## Login Page
+
+On Login page you can log in with default username and password from practice server
+username: peter@abv.bg
+password: 123456
+
+or navigate directly to register page if you don't have profile
+
+![image](https://user-images.githubusercontent.com/53934110/183756381-08b04895-1e79-4300-a391-02a4003d0992.png)
+
+## Register Page
+
+On Register page you can register a new user.
+You should enter the following credentions:
+- username
+- password
+- password confirmation
+and by clicking "Register" Button you will add new user you the application
+
+![image](https://user-images.githubusercontent.com/53934110/183756645-ae0a337d-d9b4-42c5-a1e3-b0c27a2db802.png)
+
+## New Recipe Page
+
+To add new recipes to the app you should login first and then you can add some new recipes.
+You can add:
+- Title of the recipe
+-  Category
+-  Cooking time
+-  Ingredients
+-  Direction 
+
+and the recipe will be added after clicking "New Recipe" Button.
 ![image](https://user-images.githubusercontent.com/53934110/183755749-461a44c3-403f-4107-b1db-3d8f94d7d97a.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Details Page
 
-## Available Scripts
+You can find all the inforamtion about the current recipe.
+If you are the owner of the recipe, by using the buttons on the top you can:
+- Edit current recipe 
+- Delete current recipe
+Every use can add new comment to current recipe by typing his comment in the bottom box and click "Add comment" button.
+![image](https://user-images.githubusercontent.com/53934110/183757141-e592c451-f76f-46d1-870d-bd6c4e760757.png)
 
-In the project directory, you can run:
+## Edit Recipe Page
 
-### `npm start`
+After adding some recipes, from Details page if you are owner of the current recipe and click "Edit" button you can edit your recipes.
+When you correct all the necessary information you can save it by click on "Save Recipe" button or discard changes by clicking "Cancel".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://user-images.githubusercontent.com/53934110/183757408-da511378-9843-4479-936f-28688c142928.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Contact Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here you can find some fake contact information.
+![image](https://user-images.githubusercontent.com/53934110/183757814-e7330a5d-e7a4-47ef-8e1f-57604c79631e.png)
 
-### `npm run build`
+## About Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here you can find some info about the app.
+![image](https://user-images.githubusercontent.com/53934110/183757865-a84989de-95e3-4e33-b672-4ddb1a6fad11.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
