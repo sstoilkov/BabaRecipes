@@ -1,7 +1,5 @@
 This is an application for Cooking dishes
 
-This is an application for Cooking dishes
-
 The app is using Softuni practice server.
 
 ## Available pages
