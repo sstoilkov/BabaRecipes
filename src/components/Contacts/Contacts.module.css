@@ -1,12 +1,13 @@
 .contactsPage {
-    width: auto;
-    padding-right: 15px;
-    padding-top: 20px;
-    justify-content: right;
-    padding-left: 20px;
+    margin-top: 15px;
     position: relative;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
     box-sizing: border-box;
-    text-align: left;
+    background: transparent;
+    box-shadow: 0px 0px 5px 0px #f8f9fa, -14px -14px 20px #191c21;
 }
 
 .contactsPage>ul {
