@@ -12,10 +12,10 @@ import { EditRecipe } from "./components/EditRecipe/EditRecipe";
 import { AuthProvider } from "./contexts/AuthContext"
 import { RecipeProvider } from "./contexts/RecipeContext"
 import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
-import "./App.module.css"
 import { About } from "./components/About/About";
 import { Contacts } from "./components/Contacts/Contacts";
 import { PrivateRoute } from "./components/common/PrivateRoute"
+import "./App.module.css"
 
 function App() {
   return (
